@@ -23,7 +23,7 @@ struct Append<TypeList<Args...>, NullType> {
 };
 
 template<typename ...Args>
-struct Append<TypeList<Args...>, TypeList<>> {
+struct Append<TypeList<Args...>, TypeList<> > {
     using Result = TypeList<Args...>;
 };
 
@@ -33,7 +33,7 @@ struct Append<TypeList<Args...>, T> {
 };
 
 template<typename ...Args1, typename ...Args2>
-struct Append<TypeList<Args1...>, TypeList<Args2...>> {
+struct Append<TypeList<Args1...>, TypeList<Args2...> > {
     using Result = TypeList<Args1..., Args2...>;
 };
 
@@ -82,7 +82,7 @@ struct Length<NullType> {
 };
 
 template<>
-struct Length<TypeList<>> {
+struct Length<TypeList<> > {
     enum {
         value = 0
     };
